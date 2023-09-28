@@ -6,22 +6,25 @@ Create a class method that calculates the amount of compound interest for a give
 
 Extension: accept time given in different measurements, but convert them to years for use in your class template.
 """
-
+import math
 
 class Calc:
     principal = 0
     rate = 0
     nPeriods = 0
 
-    def __init__(self):
+    def __init__(self,P = 0,r=0,n=0):
         #more input parameters needed
+        self.principal = P
+        self.rate = r
+        self.nPeriods = n
         return
 
     def interest(self,t):
-        return 
+        return round(((self.principal*((1+ (self.rate/(100*self.nPeriods)))**(self.nPeriods*t)))-self.principal),2)
     
     def amount(self,t):
-        return
+        return round((self.principal*((1+ (self.rate/(100*self.nPeriods)))**(self.nPeriods*t))),2)
 
 a = Calc(P=1000,r=4,n=2)
 assert a.interest(3) == 126.16
